@@ -1,0 +1,6 @@
+pm25 <- readRDS("summarySCC_PM25.rds")
+source1 <- readRDS("Source_Classification_Code.rds")
+meanyear<-(tapply(pm25$Emissions,pm25$year,sum))
+png("plot1.png", width=480, height=480)
+barplot(meanyear,xlab = "years",ylab="emmsions")
+dev.off()
